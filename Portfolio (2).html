@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OLOGI JOAKIM- Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #5149e7;
+      --secondary: #f6833b;
+      --bg: #138a8a;
+      --text: #1f2937;
+      --white: #eedfdff2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: var(--white);
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background-color: var(--white);
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1rem;
+      background-color: var(--white);
+    }
+
+    .hero img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 1rem;
+      border: 5px solid var(--secondary);
+    }
+
+    .hero-text {
+      max-width: 500px;
+      text-align: center;
+      margin: 1rem;
+    }
+
+    .hero-text h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    form {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    form button {
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 5px;
+      background: var(--primary);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: var(--secondary);
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .contact-info a {
+      color: var(--primary);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      color: var(--secondary);
+    }
+
+    .copy-btn {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .copy-btn:hover {
+      background-color: var(--secondary);
+    }
+
+    .social {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .social a {
+      font-size: 1.5rem;
+      margin: 0 10px;
+      color: var(--primary);
+      transition: color 0.3s;
+    }
+
+    .social a:hover {
+      color: var(--secondary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: var(--primary);
+      color: white;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .hero-text {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>OLOGI JOAKIM</h1>
+    <p>Web Developer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <img src="https://i.postimg.cc/QMNcLH22/WIN-20250804-11-16-50-Pro.jpg" alt="Your Photo" />
+    <div class="hero-text">
+      <h2>Hi, I'm Joakim Ologi</h2>
+      <p>I build clean, responsive websites using HTML, CSS,and JAvascript . i'm currently learning  more about web development,python and database to enhance more on my skills.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="text-align: center;">
+      I'm a student in PLP Academy who is learning web developement and who has a  passion for design and development. I love solving problems and building tools that  will help help people and businesses grow online.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>A responsive personal portfolio made using HTML and CSS.</p>
+      </div>
+      <div class="project">
+        <h3>Coming Soon</h3>
+        <p>Planning on something new that is mind blowing</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <p>You can also reach me directly:</p>
+      <p>📧 <a href="mailto:ologijoakim@gmail.com" id="email-link">ologijoakim@gmail.com</a></p>
+      <button class="copy-btn" onclick="copyEmail()">Copy Email</button>
+      <p id="copy-msg" style="margin-top: 0.5rem; font-size: 0.9rem; color: green;"></p>
+    </div>
+
+    <div class="social">
+      <a href="https://github.com/joakim-ologi" target="_blank" title="GitHub">🐱</a>
+      <a href="https://linkedin.com/in/joakim-ologi" target="_blank" title="LinkedIn">💼</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function copyEmail() {
+      const email = "";
+      navigator.clipboard.writeText(email).then(() => {
+        document.getElementById("copy-msg").textContent = "Email copied to clipboard!";
+        setTimeout(() => {
+          document.getElementById("copy-msg").textContent = "";
+        }, 2000);
+      }).catch(err => {
+        document.getElementById("copy-msg").textContent = "Failed to copy email.";
+      });
+    }
+  </script>
+
+</body>
+</html>
